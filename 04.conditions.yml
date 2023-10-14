@@ -1,6 +1,6 @@
 - name: Demo on conditions
-  hosts: all
-  become: true
+  hosts: localhost
+  connection: local
   vars:
     crickter: true
     footballer: false
