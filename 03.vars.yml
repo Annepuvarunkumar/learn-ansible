@@ -1,0 +1,17 @@
+- name: Variables
+  hosts: localhost
+  connection: local
+  vars:
+    URL: play.google.com
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
+    - name: Print task Variables
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+      vars:
+        URL: task.google.com
+
+# these are been used for variables precedence purpose and tasks level variables has higher priority than play level variables
