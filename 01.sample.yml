@@ -1,0 +1,11 @@
+- name: Install Nginx
+  hosts: WEB
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
+
+- name: Restart Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: yes

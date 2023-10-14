@@ -1,0 +1,20 @@
+- name: Demo on conditions
+  hosts: all
+  become: true
+  vars:
+    crickter: true
+    footballer: false
+
+  tasks:
+    - name: Print Crickter Name
+      ansible.builtin.debug:
+       msg: dhoni is a crickter
+      when: crickter is true
+
+  tasks:
+    - name: Print Footballer Name
+      ansible.builtin.debug:
+        msg: messi is a footballer
+      when: footballer is true
+
+
