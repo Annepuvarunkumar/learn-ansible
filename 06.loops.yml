@@ -2,29 +2,29 @@
   hosts: localhost
   connection: local
   vars:
-    crickters:
-     - dhoni
-     - kohli
+    fruits:
+      - orange
+      - apple
 
   tasks:
-    - name: Print Crickters
+    - name: Print Fruits
       ansible.builtin.debug:
-        msg: Crickters name - "{{ item }}"
-      loops: " {{ cricketrs }}"
+        msg: fruit name - "{{ item }}"
+      loops: " {{ fruits }}"
 
   tasks:
-    - name: Print Crickters Local Values
+    - name: Print Fruits Local Values
       ansible.builtin.debug:
-        msg: Crickter name - "{{ item }}"
+        msg: fruit name - "{{ item }}"
       loops:
-        - rohit
-        - ruturaj
+        - bananas
+        - kiwi
 
   tasks:
-    - name: Print Crickters runs scored
+    - name: Print Fruits name quantity
       ansible.builtin.debug:
-        msg: Crickter name - {{ item.crickter }} , {{ item.scored }}
+        msg: Crickter name - {{ item.name }} , {{ item.quantity }}
       loops:
-        - { name: "dhoni", runs: 10000 }
-        - { name: "kohli", runs: 13000 }
+        - { name: "orange", quantity: 100 }
+        - { name: "apple", quantity: 200 }
 
