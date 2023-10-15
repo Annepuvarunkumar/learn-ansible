@@ -1,9 +1,9 @@
-name: Variables
-hosts: localhost
-connection: local
-vars:
-  URL: www.google.com
-tasks:
+- name: Variables
+  hosts: localhost
+  connection: local
+  vars:
+    URL: www.google.com
+  tasks:
   - name: Print Variables
     ansible.builtin.debug:
       msg: URL = {{ URL }}
