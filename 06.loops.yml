@@ -1,4 +1,30 @@
-- name: Loops
-  hosts:
-  connection:
+- name: Demo on Loops
+  hosts: localhost
+  connection: local
   vars:
+    crickters:
+     - dhoni
+     - kohli
+
+  tasks:
+    - name: Print Crickters
+      ansible.builtin.debug:
+        msg: Crickters name - "{{ item }}"
+      loops: " {{ cricketrs }}"
+
+  tasks:
+    - name: Print Crickters Local Values
+      ansible.builtin.debug:
+        msg: Crickters name - "{{ item }}"
+      loops:
+        - rohit
+        - ruturaj
+
+  tasks:
+    - name: Print Crickters runs scored
+      ansible.builtin.debug:
+        msg: Crickters name - {{ crickter.name }} , {{ runs.scored }}
+      loops:
+        - { name: "dhoni", runs: 10000 }
+        - { name: "kohli", runs: 13000 }
+

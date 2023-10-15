@@ -3,12 +3,12 @@
   connection: local
   vars:
     crickter_name: dhoni
-    stats: 10000
+    runs: 10000
     crickter: 'true'
 
   tasks:
     - name: Print
       ansible-builtin.debug:
-       msg: crickter - {{ dhoni }} , stats - {{ 10000 }}
+       msg: crickter - {{ dhoni }} , runs - {{ 10000 }}
       when: crickter is true
 
