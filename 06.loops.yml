@@ -15,7 +15,7 @@
   tasks:
     - name: Print Crickters Local Values
       ansible.builtin.debug:
-        msg: Crickters name - "{{ item }}"
+        msg: Crickter name - "{{ item }}"
       loops:
         - rohit
         - ruturaj
@@ -23,7 +23,7 @@
   tasks:
     - name: Print Crickters runs scored
       ansible.builtin.debug:
-        msg: Crickters name - {{ item.name }} , {{ item.scored }}
+        msg: Crickter name - {{ item.crickter }} , {{ item.scored }}
       loops:
         - { name: "dhoni", runs: 10000 }
         - { name: "kohli", runs: 13000 }
