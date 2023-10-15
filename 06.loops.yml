@@ -5,17 +5,16 @@
     fruits:
       - orange
       - apple
-
   tasks:
     - name: Print Fruits
       ansible.builtin.debug:
-        msg: fruit name - "{{ item }}"
+        msg: Fruit name - "{{ item }}"
       loops: " {{ fruits }}"
 
   tasks:
     - name: Print Fruits Local Values
       ansible.builtin.debug:
-        msg: fruit name - "{{ item }}"
+        msg: Fruit name - "{{ item }}"
       loops:
         - bananas
         - kiwi
@@ -23,7 +22,7 @@
   tasks:
     - name: Print Fruits name quantity
       ansible.builtin.debug:
-        msg: fruit name - {{ item.name }} , Quantity - {{ item.quantity }}
+        msg: Fruit name - {{ item.name }} , Quantity - {{ item.quantity }}
       loops:
         - { name: "orange", quantity: 100 }
         - { name: "apple", quantity: 200 }
