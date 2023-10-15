@@ -23,7 +23,7 @@
   tasks:
     - name: Print Crickters runs scored
       ansible.builtin.debug:
-        msg: Crickters name - {{ crickter.name }} , {{ runs.scored }}
+        msg: Crickters name - {{ crickter.name }} , {{ crickters.scored }}
       loops:
         - { name: "dhoni", runs: 10000 }
         - { name: "kohli", runs: 13000 }
